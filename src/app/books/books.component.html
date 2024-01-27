@@ -1,0 +1,40 @@
+
+
+
+<!-- this is propety binding suppose we have written disabled={{isDisabled}} -->
+<!-- then it is always takes true -->
+<!-- <button (click)="handleClick()" [disabled]="isDisabled">Show</button> -->
+
+
+
+<!-- Two way binding -->
+<!-- <input type="text" (input)="handleInput($event)">
+{{myName}} -->
+<!-- <br><br> -->
+
+<!-- <input type="text" [(ngModel)]="myName">
+{{myName}} -->
+
+<!-- <br> -->
+<!-- <br> -->
+<!-- <button (click)="showStatus()"> -->
+    <!-- <span *ngIf="isShowing">Hide Book</span>
+    <span *ngIf="!isShowing">Show Book</span> -->
+    <!-- <ng-container *ngIf="isShowing">Hide Book</ng-container> -->
+    <!-- <ng-container *ngIf="!isShowing">Show Book</ng-container>
+</button> -->
+
+
+<!-- this is short hand to perform without function -->
+<!-- <button (click)="isShowing=!isShowing">Show Books</button> -->
+
+<!-- interpollation -->
+<h1>Books List</h1>
+<div >
+    <ul *ngIf="isShowing" class="flex flex-wrap justify-center">
+        <ng-container *ngFor="let singleBook of books; let i=index">
+            <app-book  [book]="singleBook" class="w-1/6 p-5 text-center"></app-book>
+        </ng-container>
+    </ul>
+</div>
+

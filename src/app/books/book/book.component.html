@@ -1,0 +1,15 @@
+
+<li>
+    <div>
+    <img [src]="book.image" [alt]="book.name" class="m-auto rounded-sm"/>
+    <div class="m-auto">
+    <p class="name">{{book.name | titlecase}}</p>
+    <p class="author">{{book.author | titlecase}}</p>
+    <p class="amount">{{book.amount |currency :'INR'}}</p>
+    <button *ngIf="!isInCart" (click)="addToCart()" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Add to Cart</button>
+    <button *ngIf="isInCart" (click)="removeFromCart()" class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Remove From Cart</button>     
+    </div>                                                                                                
+    </div>
+</li>
+
+
